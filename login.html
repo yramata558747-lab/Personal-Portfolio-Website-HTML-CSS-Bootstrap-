@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Yushria</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0; padding: 0; min-height: 100vh;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Sharp Background with very light overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('logregbgnew.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(2px); 
+      z-index: -2;
+    }
+
+    /* --- RAINING EFFECT --- */
+    .rain-container {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .falling-img {
+      position: absolute;
+      width: 100px; 
+      top: -100px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    /* Variety in positions and speeds */
+    .falling-img:nth-child(1) { left: 5%;  animation-duration: 5s; animation-delay: 0s; }
+    .falling-img:nth-child(2) { left: 20%; animation-duration: 8s; animation-delay: 2s; }
+    .falling-img:nth-child(3) { left: 35%; animation-duration: 6s; animation-delay: 1s; }
+    .falling-img:nth-child(4) { left: 50%; animation-duration: 10s; animation-delay: 4s; }
+    .falling-img:nth-child(5) { left: 65%; animation-duration: 7s; animation-delay: 0.5s; }
+    .falling-img:nth-child(6) { left: 80%; animation-duration: 9s; animation-delay: 3s; }
+    .falling-img:nth-child(7) { left: 95%; animation-duration: 6s; animation-delay: 1.5s; }
+
+    /* --- FORM & PHOTO --- */
+    .navbar { background-color: rgba(255, 255, 255, 0.9) !important; }
+
+    .floating-photo {
+      height: 160px; width: auto; z-index: 10;
+      margin-bottom: -60px;
+      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+      position: relative;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      border: none; border-radius: 25px;
+      padding-top: 65px !important;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+    }
+
+    .btn-custom {
+      background-color: #1a3a5f; color: white; border-radius: 12px;
+      transition: transform 0.2s ease; border: none;
+    }
+    .btn-custom:active { transform: scale(0.95); }
+    .form-control { border-radius: 10px; padding: 10px; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html" style="color: #1a3a5f;">Profile</a>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="rain-container">
+  <img src="rainbg.png" class="falling-img">
+  <img src="backgroundlanding.png" class="falling-img">
+  <img src="rainbg.png" class="falling-img">
+  <img src="backgroundlanding.png" class="falling-img">
+  <img src="rainbg.png" class="falling-img">
+  <img src="backgroundlanding.png" class="falling-img">
+  <img src="rainbg.png" class="falling-img">
+</div>
+
+<div class="container d-flex flex-column justify-content-center align-items-center" style="min-height:90vh;">
+  
+  <div class="card p-4 shadow" style="width:360px;">
+    <h3 class="text-center mb-4" style="color: #1a3a5f; font-weight: bold;">Login</h3>
+    <form action="index.html">
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Email</label>
+        <input type="email" class="form-control" required>
+      </div>
+      <div class="mb-4">
+        <label class="form-label fw-semibold">Password</label>
+        <input type="password" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-custom w-100 py-2 fw-bold">Sign In</button>
+      <p class="text-center mt-3 small">New here? <a href="register.html" class="fw-bold" style="color: #1a3a5f; text-decoration: none;">Create Account</a></p>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
